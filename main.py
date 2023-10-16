@@ -49,8 +49,8 @@ for index, row in df1.iterrows():
 dictionary_1=dict(sorted(dictionary_1.items()))
 
 
-df_outputCSV = pd.DataFrame(dictionary_1)
-df_outputCSV.to_csv('output.csv', index=False)
+# df_outputCSV = pd.DataFrame(dictionary_1)
+# df_outputCSV.to_csv('output.csv', index=False)
 
-# for keys, value in dictionary_1.items():
-#    print(keys,value)
+for keys, value in dictionary_1.items():
+   print(keys,value)
