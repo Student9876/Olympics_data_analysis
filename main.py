@@ -7,6 +7,7 @@
 
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 
 
 file_path1 = "dataset/athlete_events.csv"
@@ -52,5 +53,54 @@ dictionary_1=dict(sorted(dictionary_1.items()))
 # df_outputCSV = pd.DataFrame(dictionary_1)
 # df_outputCSV.to_csv('output.csv', index=False)
 
+# for keys, value in dictionary_1.items():
+#    print(keys,value)
+
+dictionary_2 ={
+
+}
+
 for keys, value in dictionary_1.items():
-   print(keys,value)
+    for key, val in value.items():
+        if(key==2010):
+            dictionary_2[keys]=val
+
+
+
+items = list(dictionary_2.items())
+# Split the list of tuples in half
+first_ = items[:len(items)//2]
+second_ = items[len(items)//2:]
+# Create two separate dictionaries
+
+
+first_half  = first_[:len(first_)//2]
+second_half  = first_[len(first_)//2:]
+third_half  = items[:len(second_)//2]
+forth_half  = items[len(second_)//2:]
+
+
+first_half_dict = dict(first_half)
+second_half_dict = dict(second_half)
+third_half_dict = dict(third_half)
+forth_half_dict = dict(forth_half)
+
+
+names1 = list(first_half_dict.keys())
+values1 = list(first_half_dict.values())
+
+names2 = list(second_half_dict.keys())
+values2 = list(second_half_dict.values())
+
+names3 = list(third_half_dict.keys())
+values3 = list(third_half_dict.values())
+
+names4 = list(forth_half_dict.keys())
+values4 = list(forth_half_dict.values())
+
+plt.bar(range(len(first_half)), values1, tick_label=names1)
+plt.show()
+# plt.bar(range(len(second_half)), values2, tick_label=names2)
+# plt.show()
+# plt.bar(range(len(third_half)), values3, tick_label=names3)
+# plt.bar(range(len(forth_half)), values4, tick_label=names4)
