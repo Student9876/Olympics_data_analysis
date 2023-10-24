@@ -50,8 +50,8 @@ second_ = items[len(items)//2:]
 # Dividing further in 4 parts
 first_half  = first_[:len(first_)//2]
 second_half  = first_[len(first_)//2:]
-third_half  = items[:len(second_)//2]
-forth_half  = items[len(second_)//2:]
+third_half  = second_[:len(second_)//2]
+forth_half  = second_[len(second_)//2:]
 
 
 # Create four separate dictionaries
@@ -73,7 +73,29 @@ values3 = list(third_half_dict.values())
 names4 = list(forth_half_dict.keys())
 values4 = list(forth_half_dict.values())
 
-plt.bar(range(len(first_half)), values1, tick_label=names1)
+
+# Initialise the subplot function using number of rows and columns 
+figure, axis = plt.subplots(2, 2)
+
+
+axis[0, 0].bar(range(len(first_half)), values1, tick_label=names1)
+axis[0, 0].set_title("1st") 
+  
+
+axis[0, 1].bar(range(len(second_half)), values2, tick_label=names2)
+axis[0, 1].set_title("2nd") 
+  
+
+axis[1, 0].bar(range(len(third_half)), values3, tick_label=names3)
+axis[1, 0].set_title("3rd") 
+  
+ 
+axis[1, 1].bar(range(len(forth_half)), values4, tick_label=names4)
+axis[1, 1].set_title("4th")
+
+
+
+# plt.bar(range(len(first_half)), values1, tick_label=names1)
 plt.show()
 # plt.bar(range(len(second_half)), values2, tick_label=names2)
 # plt.show()
