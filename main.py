@@ -10,17 +10,14 @@ df2 = pd.read_csv(file_path2)
 
 
 # Enter year here 
-year = 2016
-
+year = 1956
 
 
 dictionary_1 = {
 }
 dictionary_2 ={
 }
-
 Country_list=[]
-
 
 for index,row in df2.iterrows():
     Country_list.append(row['NOC'])
@@ -66,7 +63,6 @@ second_half_dict = dict(second_half)
 third_half_dict = dict(third_half)
 forth_half_dict = dict(forth_half)
 
-
 names1 = list(first_half_dict.keys())
 values1 = list(first_half_dict.values())
 
@@ -79,31 +75,14 @@ values3 = list(third_half_dict.values())
 names4 = list(forth_half_dict.keys())
 values4 = list(forth_half_dict.values())
 
-
 # Initialise the subplot function using number of rows and columns 
 figure, axis = plt.subplots(4)
 figure.suptitle(f"Olympics medal winner of year {year}")
 
-# axis[0].set_title("1st") 
+# axis[].set_title("4th")
 axis[0].bar(range(len(first_half)), values1, tick_label=names1)
-  
-
-# axis[1].set_title("2nd") 
-axis[1].bar(range(len(second_half)), values2, tick_label=names2)
-  
-
-# axis[2].set_title("3rd") 
+axis[1].bar(range(len(second_half)), values2, tick_label=names2) 
 axis[2].bar(range(len(third_half)), values3, tick_label=names3)
-  
- 
-# axis[3].set_title("4th")
 axis[3].bar(range(len(forth_half)), values4, tick_label=names4)
 
-
-
-# plt.bar(range(len(first_half)), values1, tick_label=names1)
 plt.show()
-# plt.bar(range(len(second_half)), values2, tick_label=names2)
-# plt.show()
-# plt.bar(range(len(third_half)), values3, tick_label=names3)
-# plt.bar(range(len(forth_half)), values4, tick_label=names4)
